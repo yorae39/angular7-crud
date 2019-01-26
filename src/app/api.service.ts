@@ -7,7 +7,7 @@ import { Produto } from './produto';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = "/api/v1/produtos";
+const apiUrl = "http://localhost:3000/api/v1/produtos";
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +48,7 @@ export class ApiService {
   addProduto(produto): Observable<Produto>{
     return this.http.post<Produto>(apiUrl, produto, httpOptions)
     .pipe(
-      tap((produto: Produto) => console.log(`produto adicionado w/ id=${produto.id}`)),
+      tap((produto: Produto) => console.log(`produto adicionado w/ id=${produto._id}`)),
       catchError(this.handleError<Produto>(`addProduto`))
     );
   }

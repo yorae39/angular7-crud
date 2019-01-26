@@ -7,9 +7,7 @@
   </div>
 
   <div class="button-row">
-
     <a mat-flat-button color="primary" [routerLink]="['/adiciona-produto']"><mat-icon>add</mat-icon></a>
-
   </div>
 
   <div class="mat-elevation-z8">
@@ -30,7 +28,7 @@
       </ng-container>
       
       <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/detalha-produto/', row.id]"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/detalha-produto/', row._id]"></tr>
     </table>
     
 

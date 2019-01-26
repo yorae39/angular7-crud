@@ -18,8 +18,13 @@ const routes: Routes = [
   },
   {
     path: 'adiciona-produto',
-    component: DetalhaProdutoComponent,
+    component: AdicionaProdutoComponent,
     data: {title: 'Adiciona Produto'}
+  },
+  {
+    path: 'edita-produto',
+    component: EditaProdutoComponent,
+    data: {title: 'Edita Produto'}
   },
   { path: '',
     redirectTo: '/produtos',

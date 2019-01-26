@@ -1,3 +1,53 @@
-<p>
-  adiciona-produto works!
-</p>
+<div class="example-container mat-elevation-z8">
+
+    <div class="example-loading-shade" *ngIf="isLoadingResults">
+      <mat-spinner  *ngIf="isLoadingResults"></mat-spinner> 
+    </div>
+  
+    <div class="button-row">
+      <a mat-flat-button color="primary" [routerLink]="['/produtos']"><mat-icon>list</mat-icon></a>
+    </div>
+    
+    <mat-card class="example-card">
+  
+      <form [formGroup]="produtoForm" (ngSubmit)="onFormSubmit(produtoForm.value)"> 
+  
+        <mat-form-field class="example-full-width">
+  
+            <input matInput placeholder="Nome do Produto" formControlName="prod_nome" [errorStateMatcher]="matcher">
+            
+            <mat-error>
+                <span *ngIf="!produtoForm.get('prod_nome').valid && produtoForm.get('prod_nome').touched">Por favor insira o nome do produto!</span>
+            </mat-error>
+  
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+  
+          <input matInput placeholder="Descrição do Produto" formControlName="prod_desc"  [errorStateMatcher]="matcher">
+  
+          <mat-error>
+             <span *ngIf="!produtoForm.get('prod_desc').valid && produtoForm.get('prod_desc').touched">Por favor insira a descrição do produto!</span>
+          </mat-error>
+  
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+            
+          <input matInput placeholder="Preço do produto" formControlName="prod_preco" [errorStateMatcher]="matcher">
+  
+            <mat-error>
+              <span *ngIf="!produtoForm.get('prod_preco').valid && produtoForm.get('prod_preco').touched">por favor insira o preço do produto!</span>
+            </mat-error>
+        </mat-form-field>
+  
+        <div class="button-row">
+            <button type="submit" [disabled]="!produtoForm.valid" mat-flat-button color="primary">
+            <mat-icon>save</mat-icon></button>
+        </div>
+
+      </form>
+  
+    </mat-card>
+  
+  </div>

@@ -7,7 +7,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { DetalhaProdutoComponent } from './detalha-produto/detalha-produto.component';
 import { AdicionaProdutoComponent } from './adiciona-produto/adiciona-produto.component';
 import { EditaProdutoComponent } from './edita-produto/edita-produto.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -34,6 +34,7 @@ import {
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatTableModule,
