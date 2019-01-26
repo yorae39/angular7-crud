@@ -7,8 +7,19 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { DetalhaProdutoComponent } from './detalha-produto/detalha-produto.component';
 import { AdicionaProdutoComponent } from './adiciona-produto/adiciona-produto.component';
 import { EditaProdutoComponent } from './edita-produto/edita-produto.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -22,7 +33,17 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
