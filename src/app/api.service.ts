@@ -7,7 +7,7 @@ import { Produto } from './produto';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = "http://localhost:3000/api/v1/produtos";
+const apiUrl = "http://localhost:3000/produtos";
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,8 @@ export class ApiService {
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
   
-      // TODO: enviar o erro para a infraestrutura de registro remoto
-      console.error(error); // log para o console
+      // TODO: enviar o erro para a infraestrutura de registro remoto - log para o console
+      //console.error(error); 
   
       // Deixe o aplicativo continuar executando retornando um resultado vazio.
       return of(result as T);
@@ -36,7 +36,7 @@ export class ApiService {
     );
   }
 
-  getProdutoFindById(id: number): Observable<Produto>{
+  getProdutoFindById(id: string): Observable<Produto>{
     const url = `${apiUrl}/${id}`;
     return this.http.get<Produto>(apiUrl)
     .pipe(
@@ -62,7 +62,7 @@ export class ApiService {
     );
   }
 
-  deleteProduto(id): Observable<Produto>{
+  deleteProduto(id: string): Observable<Produto>{
     const url = `${apiUrl}/${id}`;
     return this.http.delete<Produto>(apiUrl)
     .pipe(

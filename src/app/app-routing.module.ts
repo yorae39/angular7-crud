@@ -22,7 +22,7 @@ const routes: Routes = [
     data: {title: 'Adiciona Produto'}
   },
   {
-    path: 'edita-produto',
+    path: 'edita-produto/:id',
     component: EditaProdutoComponent,
     data: {title: 'Edita Produto'}
   },

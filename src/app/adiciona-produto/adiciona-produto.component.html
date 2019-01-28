@@ -14,7 +14,7 @@
   
         <mat-form-field class="example-full-width">
   
-            <input matInput placeholder="Nome do Produto" formControlName="prod_nome" [errorStateMatcher]="matcher">
+            <input matInput placeholder="Nome do Produto" formControlName="prod_nome" [errorStateMatcher]="matcher"/>
             
             <mat-error>
                 <span *ngIf="!produtoForm.get('prod_nome').valid && produtoForm.get('prod_nome').touched">Por favor insira o nome do produto!</span>
@@ -24,7 +24,7 @@
   
         <mat-form-field class="example-full-width">
   
-          <input matInput placeholder="Descrição do Produto" formControlName="prod_desc"  [errorStateMatcher]="matcher">
+          <input matInput placeholder="Descrição do Produto" formControlName="prod_desc"  [errorStateMatcher]="matcher"/>
   
           <mat-error>
              <span *ngIf="!produtoForm.get('prod_desc').valid && produtoForm.get('prod_desc').touched">Por favor insira a descrição do produto!</span>
@@ -34,7 +34,7 @@
   
         <mat-form-field class="example-full-width">
             
-          <input matInput placeholder="Preço do produto" formControlName="prod_preco" [errorStateMatcher]="matcher">
+          <input matInput placeholder="Preço do produto" formControlName="prod_preco" [errorStateMatcher]="matcher"/>
   
             <mat-error>
               <span *ngIf="!produtoForm.get('prod_preco').valid && produtoForm.get('prod_preco').touched">por favor insira o preço do produto!</span>

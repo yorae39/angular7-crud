@@ -16,6 +16,7 @@ export class DetalhaProdutoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   ngOnInit() {
+    console.log(this.route.snapshot.params['id']);
     this.getProdutoDetalhe(this.route.snapshot.params['id']);
   }
 
@@ -27,5 +28,18 @@ export class DetalhaProdutoComponent implements OnInit {
         console.log(this.produto);
         this.isLoadingResults = false;
       });
+  }
+
+  deleteProduto(id) {
+    this.isLoadingResults = true;
+    this.api.deleteProduto(id)
+      .subscribe(res => {
+          this.isLoadingResults = false;
+          this.router.navigate(['/produtos']);
+        }, (err) => {
+          console.log(err);
+          this.isLoadingResults = false;
+        }
+      );
   }
 }

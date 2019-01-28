@@ -18,7 +18,7 @@
         <input matInput placeholder="Descrição do produto" formControlName="prod_desc"
                [errorStateMatcher]="matcher">
         <mat-error>
-          < <span *ngIf="!produtoForm.get('prod_desc').valid && produtoForm.get('prod_desc').touched">Por favor insira a descrição do produto!</span>
+           <span *ngIf="!produtoForm.get('prod_desc').valid && produtoForm.get('prod_desc').touched">Por favor insira a descrição do produto!</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">

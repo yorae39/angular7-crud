@@ -30,10 +30,10 @@ export class AdicionaProdutoComponent implements OnInit {
   onFormSubmit(form: NgForm){
     this.isLoadingResults = true;
     this.api.addProduto(form)
-      .subscribe(res =>{
+      .subscribe(res => {
         let id = res['_id'];
         this.isLoadingResults = false;
-        this.router.navigate(['/detalha-produto', id])
+        this.router.navigate(['/detalha-produto', id]);
       }, err => {
         console.log(err);
         this.isLoadingResults = false;
